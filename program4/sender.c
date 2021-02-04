@@ -27,9 +27,7 @@ addr.sin_addr.s_addr=inet_addr(HELLO_GROUP);
 addr.sin_port=htons(HELLO_PORT);
 /* now just sendto() our destination! */
 while (1) {
-if (sendto(fd,message,sizeof(message),0,(struct sockaddr *)
-&addr,
-sizeof(addr)) < 0) {
+if (sendto(fd,message,sizeof(message),0,(struct sockaddr *)&addr,sizeof(addr)) < 0) {
 perror("sendto");
 exit(1);
 }
